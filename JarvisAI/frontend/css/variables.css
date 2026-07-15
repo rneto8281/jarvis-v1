@@ -1,0 +1,54 @@
+/*
+ * variables.css
+ * Sistema de tokens de design do JarvisAI.
+ * Paleta: "deep-space HUD" — quase-preto azulado com ciano neon como
+ * acento primário e violeta como acento secundário para dados
+ * complementares. Todo o restante da UI deriva destas variáveis.
+ */
+
+:root {
+  /* Cores base */
+  --void: #05080f;
+  --void-deep: #02040a;
+  --panel-glass: rgba(13, 22, 40, 0.55);
+  --panel-glass-strong: rgba(13, 22, 40, 0.78);
+  --border-glow: rgba(85, 200, 255, 0.22);
+  --border-glow-strong: rgba(85, 200, 255, 0.5);
+
+  /* Acentos */
+  --accent-cyan: #3ce7ff;
+  --accent-cyan-dim: rgba(60, 231, 255, 0.35);
+  --accent-violet: #8b7bff;
+  --accent-amber: #ffb347;
+  --accent-red: #ff4d6d;
+  --accent-green: #3cffb0;
+
+  /* Texto */
+  --text-primary: #eaf6ff;
+  --text-secondary: #a9c1d9;
+  --text-muted: #5d7591;
+
+  /* Tipografia */
+  --font-display: "Chakra Petch", "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "Consolas", monospace;
+
+  /* Espaçamento */
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+
+  /* Raios e sombras */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --glow-soft: 0 0 24px rgba(60, 231, 255, 0.12);
+  --glow-strong: 0 0 40px rgba(60, 231, 255, 0.28);
+
+  /* Transições */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 160ms;
+  --dur-med: 320ms;
+}

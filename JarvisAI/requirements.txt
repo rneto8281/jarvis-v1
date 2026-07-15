@@ -1,0 +1,22 @@
+# Backend principal
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+psutil>=5.9
+
+# Plugins (opcionais - o sistema funciona sem eles, com respostas de fallback)
+wikipedia>=1.4
+pyjokes>=0.6
+pywhatkit>=5.4
+
+# Voz (opcional - sem isso, o Jarvis funciona normalmente só por texto)
+SpeechRecognition>=3.10
+pyttsx3>=2.90
+# PyAudio é necessário para o microfone funcionar com o SpeechRecognition.
+# No Windows, o pip costuma falhar ao compilar - se der erro, instale com:
+#   pip install pipwin
+#   pipwin install pyaudio
+PyAudio>=0.2.14; platform_system != "Windows"
+
+# Testes
+pytest>=8.0

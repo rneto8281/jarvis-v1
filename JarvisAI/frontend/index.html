@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JarvisAI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+  <div class="login-overlay" id="login-overlay">
+    <form class="login-box" id="login-form">
+      <div class="eyebrow">Acesso restrito</div>
+      <h2>JARVIS<span style="color:var(--accent-cyan)">AI</span></h2>
+      <input type="password" id="login-senha" placeholder="Senha de acesso" autocomplete="current-password" />
+      <button type="submit">Entrar</button>
+      <div class="login-erro" id="login-erro"></div>
+    </form>
+  </div>
+
+  <div class="app-shell">
+
+    <!-- Barra superior: identidade, status e relógio -->
+    <header class="topbar panel">
+      <div class="topbar__brand">
+        <h1>JARVIS<span style="color:var(--accent-cyan)">AI</span></h1>
+        <span class="topbar__status">
+          <span class="status-dot"></span>
+          <span id="status-label">online</span>
+        </span>
+      </div>
+      <div class="topbar__clock">
+        <div class="time" id="clock-time">--:--:--</div>
+        <div class="date" id="clock-date">-- -- ----</div>
+      </div>
+    </header>
+
+    <div class="main-grid">
+
+      <!-- Coluna esquerda: vitals do sistema -->
+      <aside class="column">
+        <section class="panel">
+          <div class="panel__title">Vitals do sistema</div>
+          <div class="vitals-list" id="vitals-list">
+            <!-- Gauges injetados via JS (systemMonitor.js) -->
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__title">Rede &amp; disco</div>
+          <div class="feed-list" id="net-detail">
+            <div class="empty-state">Carregando métricas…</div>
+          </div>
+        </section>
+      </aside>
+
+      <!-- Coluna central: núcleo (HUD) + chat -->
+      <section class="core-column">
+        <div class="panel core-orb-wrap">
+          <svg class="core-orb" id="core-orb" viewBox="0 0 200 200">
+            <circle class="core-fill" cx="100" cy="100" r="60" />
+            <circle class="ring ring--outer" cx="100" cy="100" r="92" stroke-width="1.5"
+              stroke-dasharray="4 10" />
+            <circle class="ring ring--inner" cx="100" cy="100" r="72" stroke-width="2"
+              stroke-dasharray="2 6" />
+            <circle class="ring" cx="100" cy="100" r="60" stroke-width="1.2" />
+          </svg>
+          <div class="core-status-text" id="core-status-text">standby</div>
+        </div>
+
+        <section class="panel chat-panel">
+          <div class="panel__title">Console de conversa</div>
+          <div class="chat-log" id="chat-log"></div>
+          <form class="console-input" id="chat-form">
+            <input
+              type="text"
+              id="chat-input"
+              placeholder="Digite um comando ou pergunta…"
+              autocomplete="off"
+            />
+            <button type="button" id="mic-toggle" class="mic-button" title="Ativar escuta por voz">🎙</button>
+            <button type="button" id="clap-toggle" class="mic-button" title="Ativar detecção de palmas">👏</button>
+            <button type="submit">Enviar</button>
+          </form>
+        </section>
+      </section>
+
+      <!-- Coluna direita: tarefas e log de atividade -->
+      <aside class="column">
+        <section class="panel">
+          <div class="panel__title">Tarefas pendentes</div>
+          <div class="task-list" id="task-list">
+            <div class="empty-state">Nenhuma tarefa registrada.</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__title">Atividade recente</div>
+          <div class="feed-list" id="activity-log">
+            <div class="empty-state">Nenhuma atividade ainda.</div>
+          </div>
+        </section>
+      </aside>
+
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
